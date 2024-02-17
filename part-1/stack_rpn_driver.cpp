@@ -2,6 +2,7 @@
 
 #include "stack.hpp"
 #include "stack_rpn.hpp" // Put your code in this file
+//#include "stack_enhanced.hpp"
 
 int main(int argc, char **argv)
 {
@@ -15,8 +16,28 @@ int main(int argc, char **argv)
     std::cout << "2 2 2 + * = " << stack.top() << '\n';
 
     // Advanced interface (optional)
-    stack << 2 << 2 << 3 << plus << multiplies;
+    stack.clear();
+    stack << 2 << 2 << 3;
+    
+    /*
+    std::cout << "Stack content:";
+    while (!stack.empty()) {
+        std::cout << ' ' << stack.top();
+        stack.pop();
+    }
+    std::cout << '\n';
+    */
+    
+    //std::cout << "check" << std::endl;
+
+    stack << plus;
+    stack << multiplies;
     std::cout << "2 2 2 + * = " << stack.top() << '\n';
+
+    stack << 2 << 5 << 18 << plus << multiplies;
+    std::cout << "2 5 18 + * = " << stack.top() << '\n';
+
+    
 
     return 0;
 }

@@ -48,6 +48,13 @@ template <typename T> class Stack
 
     // Check if the stack is full
     bool full() const { return _head == _storage.size(); }
+
+    // Clear the stack
+    void clear()
+    {
+        _head = 0;
+    }
+
 };
 
 #endif // __stack__
